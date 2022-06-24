@@ -1,0 +1,29 @@
+@import "../../../../variables.scss";
+
+.navbar-dark {
+    background-color: $menu-background-color !important;
+}
+
+.nav-item {
+    padding: 0.5em;
+    &:hover, &.active {
+        background-color: $menu-hover-color;
+    }
+    .nav-link {
+        color: $menu-title-color;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar .navbar-nav {
+        margin-top: 0.5em;
+    }
+}
