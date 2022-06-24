@@ -44,6 +44,8 @@ const MENU_ITEMS: IMenuItem[] = [
         value: 'other',
         label: 'Other'
     }
-]
+];
 
-export { MENU_ITEMS };
+const RIBBON_CATEGORIES = ['new', 'top'];
+
+export { MENU_ITEMS, RIBBON_CATEGORIES };
