@@ -12,6 +12,7 @@ export class GamesListComponent implements OnInit, OnDestroy {
 
     public $games: Observable<IGame[]>;
     public currentCategory: string;
+    private JACKPOTS_FETCH_INTERVAL = 5000;
     private unsubscribeNotifier = new Subject<void>();
 
     constructor(private gameService: GameService, private dataService: DataService) { }
@@ -30,8 +31,10 @@ export class GamesListComponent implements OnInit, OnDestroy {
     };
 
     private getGames = (category: string): Observable<IGame[]> => {
-        return timer(0, 3000).pipe(
-            mergeMap(() => combineLatest([this.gameService.getGames(), this.gameService.getJackpots()])),
+        return combineLatest([
+            this.gameService.getGames(),
+            timer(0, this.JACKPOTS_FETCH_INTERVAL).pipe(mergeMap(() => this.gameService.getJackpots())),
+        ]).pipe(
             map(([games, jackpots]) => {
                 return games?.map(game => this.mapJackpotToGame(game, jackpots))?.filter(game => this.isGameInCurrentCategory(game, category));
             })
