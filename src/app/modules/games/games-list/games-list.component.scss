@@ -5,25 +5,6 @@
 	linear-gradient($menu-title-color ($background-dotted-space - $background-dotted-size), transparent 1%) center,
 	$background-dotted-color;
 	background-size: $background-dotted-size $background-dotted-space;
-	&::after {
-		content: 'margin';
-		display: block;
-		position: absolute;
-		top: -50px;
-		left: -50px;
-		right: -50px;
-		bottom: -50px;
-		z-index: -2;
-		background:
-			linear-gradient(90deg, $menu-title-color (
-				$background-dotted-space - $background-dotted-size),
-			transparent 1%) center,
-			linear-gradient($menu-title-color (
-				$background-dotted-space - $background-dotted-size),
-			transparent 1%) center,
-			$background-dotted-color;
-		background-size: $background-dotted-size $background-dotted-space;
-	}
 	.container {
 		.loader-spinner {
 			width: 100%;
@@ -37,13 +18,13 @@
 					stroke-dasharray: 0.7 0.3;
 					stroke-linecap: round;
 					stroke-width: 3px;
-					stroke: $menu-hover-color;
+					stroke: $menu-title-color;
 					&.one {
 						animation: load 1.5s infinite ease-in;
 						animation-direction: reverse;
 					}
 					&.two {
-						fill: $menu-hover-color;
+						fill: $menu-title-color;
 					}
 					&.three {
 						animation: load 1.5s infinite;
