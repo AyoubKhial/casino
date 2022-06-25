@@ -3,7 +3,7 @@
       <span>{{ ribbon }}</span>
    </div>
    <div class="content-overlay"></div>
-   <img class="img-fluid" src="{{ game?.image }}">
+   <img class="img-fluid" src="{{ game?.image }}" loading="lazy">
    <div class="img-text" *ngIf="game?.jackpot">{{ game?.jackpot?.amount }}</div>
    <div class="overlay">
       <div class="hover-container">
