@@ -1,0 +1,14 @@
+<div class="card">
+   <div class="ribbon">
+      <span>{{ ribbon }}</span>
+   </div>
+   <div class="content-overlay"></div>
+   <img class="img-fluid" src="{{ game?.image }}">
+   <div class="img-text" *ngIf="game?.jackpot">{{ game?.jackpot?.amount }}</div>
+   <div class="overlay">
+      <div class="hover-container">
+         <span>{{ game?.name }}</span>
+         <button type="button" class="btn btn-warning w-100">Play</button>
+      </div>
+   </div>
+</div>

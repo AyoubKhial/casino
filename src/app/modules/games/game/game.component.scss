@@ -1,0 +1,92 @@
+@import "../../../../variables.scss";
+
+.card {
+	position: relative;
+	border: none;
+	&:hover {
+		.img-text {
+			padding: 8px 15px;
+			visibility: visible;
+			opacity: 1;
+			width: 100%;
+		}
+		.overlay {
+			opacity: 1;
+		}
+	}
+	.ribbon {
+		position: absolute;
+		right: 0;
+		top: 0px;
+		z-index: 1;
+		overflow: hidden;
+		width: 100px;
+		height: 100px;
+		text-align: right;
+		span {
+			text-transform: uppercase;
+			text-align: center;
+			line-height: 25px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			width: 115px;
+			display: block;
+			background: $menu-hover-color;
+			box-shadow: 0 0 10px 3px #000000;
+			position: absolute;
+			top: 20px;
+			right: -25px;
+		}
+	}
+	.img-text {
+		position: absolute;
+		top: 0px;
+		background: rgba(0, 0, 0, 0.65);
+		color: $menu-title-color;
+		text-align: center;
+		border-radius: .5em;
+		padding: 8px 15px;
+		visibility: visible;
+		opacity: 1;
+		width: 100%;
+	}
+	.img-fluid {
+		border-radius: .5em;
+		width: 100%;
+		height: auto;
+	}
+	.overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: .5s ease;
+		background-color: $menu-hover-color;
+		z-index: 2;
+		.hover-container {
+			color: white;
+			font-size: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			text-align: center;
+		  }
+	  }
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		flex-direction: column;
+		align-items: center;
+	}
+	.card:first-of-type {
+		margin-right: 0;
+	}
+}
